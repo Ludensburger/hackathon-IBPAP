@@ -1,0 +1,165 @@
+<!-- analytics.component.html -->
+<div class="min-h-screen bg-background">
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white border-b">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center space-x-2">
+          <div
+            class="w-8 h-8 bg-[#0973dc] rounded-lg flex items-center justify-center"
+          >
+            <!-- Heart Icon SVG -->
+            <svg
+              class="w-5 h-5 text-white"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 21C12 21 4 13.5 4 8.5C4 5.42 6.42 3 9.5 3C11.24 3 12.91 3.81 14 5.08C15.09 3.81 16.76 3 18.5 3C21.58 3 24 5.42 24 8.5C24 13.5 16 21 16 21H12Z"
+              />
+            </svg>
+          </div>
+          <span class="text-xl font-bold text-gray-900"> BayanihanAid </span>
+        </div>
+        <div class="flex items-center space-x-8">
+          <a
+            routerLink="/home"
+            class="text-gray-600 hover:text-[#0973dc] transition-colors"
+            >Home</a
+          >
+          <a
+            routerLink="/dashboard"
+            class="text-gray-600 hover:text-[#0973dc] transition-colors"
+            >Dashboard</a
+          >
+          <a
+            routerLink="/requests"
+            class="text-gray-600 hover:text-[#0973dc] transition-colors"
+            >Requests</a
+          >
+          <a
+            routerLink="/donations"
+            class="text-gray-600 hover:text-[#0973dc] transition-colors"
+            >Donations</a
+          >
+          <a
+            routerLink="/analytics"
+            class="text-[#0973dc] font-semibold hover:text-blue-800 transition-colors"
+            >Analytics</a
+          >
+        </div>
+        <div class="flex items-center space-x-4">
+          <button
+            class="border px-3 py-1 rounded font-medium text-gray-600 hover:bg-[#0973dc] hover:text-white transition-colors"
+          >
+            Profile
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mx-auto px-4 py-8">
+    <div class="mb-8 text-center">
+      <span
+        class="inline-block mb-6 px-3 py-1 rounded-full bg-blue-100 text-[#0973dc] text-sm font-medium"
+        >Analytics</span
+      >
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">
+        Relief Operations Analytics
+      </h1>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        This page provides comprehensive analytics and insights for optimizing
+        relief operations.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+        <button
+          class="text-lg px-8 py-3 rounded bg-[#0973dc] text-white hover:bg-blue-800 transition flex items-center justify-center font-semibold shadow"
+        >
+          View Full Report
+          <svg
+            class="ml-2 w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Analytics Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div
+        class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb] flex flex-col"
+      >
+        <div class="flex items-center gap-2 mb-2">
+          <svg
+            class="w-5 h-5 text-[#0973dc]"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <rect x="3" y="12" width="4" height="8" />
+            <rect x="10" y="8" width="4" height="12" />
+            <rect x="17" y="4" width="4" height="16" />
+          </svg>
+          <span class="font-semibold text-gray-900"
+            >Distribution Efficiency</span
+          >
+        </div>
+        <div class="text-3xl font-bold text-[#0973dc] mb-2">92%</div>
+        <div class="text-sm text-gray-600 mb-2">
+          Average delivery time: 3.2 days
+        </div>
+        <div class="text-xs text-gray-500 mb-4">Updated 1 hour ago</div>
+      </div>
+      <div
+        class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb] flex flex-col"
+      >
+        <div class="flex items-center gap-2 mb-2">
+          <svg
+            class="w-5 h-5 text-[#0973dc]"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          <span class="font-semibold text-gray-900">Impact Assessment</span>
+        </div>
+        <div class="text-3xl font-bold text-[#0973dc] mb-2">8,500</div>
+        <div class="text-sm text-gray-600 mb-2">Households reached</div>
+        <div class="text-xs text-gray-500 mb-4">Updated 2 hours ago</div>
+      </div>
+      <div
+        class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb] flex flex-col"
+      >
+        <div class="flex items-center gap-2 mb-2">
+          <svg
+            class="w-5 h-5 text-[#0973dc]"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <rect x="3" y="7" width="18" height="13" rx="2" />
+            <path d="M3 7l9 6 9-6" />
+          </svg>
+          <span class="font-semibold text-gray-900">Resource Allocation</span>
+        </div>
+        <div class="text-3xl font-bold text-[#0973dc] mb-2">₱1.2M</div>
+        <div class="text-sm text-gray-600 mb-2">
+          Allocated to 12 municipalities
+        </div>
+        <div class="text-xs text-gray-500 mb-4">Updated 3 hours ago</div>
+      </div>
+    </div>
+  </div>
+</div>

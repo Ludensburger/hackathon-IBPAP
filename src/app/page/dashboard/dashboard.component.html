@@ -1,0 +1,386 @@
+<!-- Dashboard HTML template for Angular -->
+<div class="min-h-screen bg-background">
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white border-b">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center space-x-2">
+          <div
+            class="w-8 h-8 bg-[#0973dc] rounded-lg flex items-center justify-center"
+          >
+            <!-- Heart Icon SVG -->
+            <svg
+              class="w-5 h-5 text-white"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 21C12 21 4 13.5 4 8.5C4 5.42 6.42 3 9.5 3C11.24 3 12.91 3.81 14 5.08C15.09 3.81 16.76 3 18.5 3C21.58 3 24 5.42 24 8.5C24 13.5 16 21 16 21H12Z"
+              />
+            </svg>
+          </div>
+          <span class="text-xl font-bold text-gray-900"> BayanihanAid </span>
+        </div>
+        <div class="flex items-center space-x-8">
+          <a
+            routerLink="/home"
+            class="text-gray-600 hover:text-[#0973dc] transition-colors"
+            >Home</a
+          >
+          <a
+            routerLink="/dashboard"
+            class="text-[#0973dc] font-semibold hover:text-blue-800 transition-colors"
+            >Dashboard</a
+          >
+          <a
+            routerLink="/requests"
+            class="text-gray-600 hover:text-[#0973dc] transition-colors"
+            >Requests</a
+          >
+          <a
+            routerLink="/donations"
+            class="text-gray-600 hover:text-[#0973dc] transition-colors"
+            >Donations</a
+          >
+          <a
+            routerLink="/analytics"
+            class="text-gray-600 hover:text-[#0973dc] transition-colors"
+            >Analytics</a
+          >
+        </div>
+        <div class="flex items-center space-x-4">
+          <button
+            class="border px-3 py-1 rounded font-medium text-gray-600 hover:bg-[#0973dc] hover:text-white transition-colors"
+          >
+            Sign In
+          </button>
+          <button
+            class="px-3 py-1 rounded font-medium bg-[#0973dc] text-white hover:bg-blue-800 transition-colors"
+          >
+            Get Started
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mx-auto px-4 py-8">
+    <!-- Header -->
+    <div class="mb-8 text-center">
+      <span
+        class="inline-block mb-6 px-3 py-1 rounded-full bg-blue-100 text-[#0973dc] text-sm font-medium"
+        >Dashboard Overview</span
+      >
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">
+        Relief Operations Dashboard
+      </h1>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        Monitor and manage disaster relief operations across affected areas
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+        <button
+          class="text-lg px-8 py-3 rounded bg-[#0973dc] text-white hover:bg-blue-800 transition flex items-center justify-center font-semibold shadow"
+        >
+          Start Relief Operation
+          <svg
+            class="ml-2 w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Stats Overview -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+      <div class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb]">
+        <div class="flex flex-row items-center justify-between pb-2">
+          <span class="text-sm font-semibold text-gray-700"
+            >Active Requests</span
+          >
+          <svg
+            class="h-5 w-5 text-[#0973dc]"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <div class="text-2xl font-bold text-gray-900">47</div>
+        <p class="text-xs text-gray-500">+12 from yesterday</p>
+      </div>
+      <div class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb]">
+        <div class="flex flex-row items-center justify-between pb-2">
+          <span class="text-sm font-semibold text-gray-700"
+            >Families Affected</span
+          >
+          <svg
+            class="h-5 w-5 text-[#0973dc]"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 00-3-3.87" />
+            <path d="M16 3.13a4 4 0 010 7.75" />
+          </svg>
+        </div>
+        <div class="text-2xl font-bold text-gray-900">28,700</div>
+        <p class="text-xs text-gray-500">Across 15 municipalities</p>
+      </div>
+      <div class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb]">
+        <div class="flex flex-row items-center justify-between pb-2">
+          <span class="text-sm font-semibold text-gray-700"
+            >Relief Goods Distributed</span
+          >
+          <svg
+            class="h-5 w-5 text-[#0973dc]"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <rect x="3" y="7" width="18" height="13" rx="2" />
+            <path d="M16 3v4M8 3v4M3 10h18" />
+          </svg>
+        </div>
+        <div class="text-2xl font-bold text-gray-900">₱2.3M</div>
+        <p class="text-xs text-gray-500">+18% from last week</p>
+      </div>
+      <div class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb]">
+        <div class="flex flex-row items-center justify-between pb-2">
+          <span class="text-sm font-semibold text-gray-700">Success Rate</span>
+          <svg
+            class="h-5 w-5 text-[#0973dc]"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <polyline points="23 4 11 16 4 9" />
+          </svg>
+        </div>
+        <div class="text-2xl font-bold text-gray-900">94.2%</div>
+        <p class="text-xs text-gray-500">+2.1% from last month</p>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <!-- Recent Requests -->
+      <div class="lg:col-span-2">
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="mb-4 flex items-center gap-2">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+            <span class="font-bold">Recent Relief Requests</span>
+          </div>
+          <div class="space-y-4">
+            <div
+              *ngFor="let request of recentRequests"
+              class="flex items-center justify-between p-4 border rounded-lg"
+            >
+              <div class="flex-1">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="font-medium">{{ request.id }}</span>
+                  <span
+                    [ngClass]="{
+                      'bg-red-100 text-red-700': request.status === 'urgent',
+                      'bg-blue-100 text-blue-700':
+                        request.status === 'in_progress',
+                      'bg-gray-100 text-gray-700':
+                        request.status === 'completed',
+                      'px-2 py-1 rounded text-xs font-semibold': true
+                    }"
+                  >
+                    {{
+                      request.status === "urgent"
+                        ? "URGENT"
+                        : request.status === "in_progress"
+                        ? "IN PROGRESS"
+                        : "COMPLETED"
+                    }}
+                  </span>
+                </div>
+                <p class="text-sm font-medium text-foreground">
+                  {{ request.barangay }}, {{ request.municipality }}
+                </p>
+                <p class="text-sm text-muted-foreground">
+                  {{ request.households }} households •
+                  {{ request.needs.join(", ") }}
+                </p>
+                <p class="text-xs text-muted-foreground mt-1">
+                  {{ request.timeAgo }}
+                </p>
+              </div>
+              <div class="flex items-center gap-2">
+                <svg
+                  *ngIf="request.status === 'urgent'"
+                  class="w-5 h-5 text-red-600"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <svg
+                  *ngIf="request.status === 'in_progress'"
+                  class="w-5 h-5 text-blue-600"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <rect x="1" y="3" width="15" height="13" rx="2" />
+                  <path d="M16 8v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8" />
+                  <path d="M8 12h.01" />
+                </svg>
+                <svg
+                  *ngIf="request.status === 'completed'"
+                  class="w-5 h-5 text-green-600"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <polyline points="12 6 12 12 16 14" />
+                </svg>
+                <button
+                  class="border px-3 py-1 rounded font-medium text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors text-xs"
+                >
+                  View Details
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Critical Areas -->
+      <div>
+        <div class="bg-white rounded-lg shadow p-6">
+          <div class="mb-4 flex items-center gap-2">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M21 10.5V6a2 2 0 00-2-2H5a2 2 0 00-2 2v4.5" />
+              <path d="M3 10.5V18a2 2 0 002 2h14a2 2 0 002-2v-7.5" />
+              <path d="M7 18v-2a2 2 0 012-2h6a2 2 0 012 2v2" />
+            </svg>
+            <span class="font-bold">Critical Areas</span>
+          </div>
+          <div class="space-y-4">
+            <div
+              *ngFor="let area of criticalAreas"
+              class="flex items-center justify-between"
+            >
+              <div>
+                <p class="font-medium">{{ area.name }}</p>
+                <p class="text-sm text-muted-foreground">{{ area.affected }}</p>
+              </div>
+              <span
+                [ngClass]="{
+                  'bg-red-100 text-red-700': area.alertLevel === 'critical',
+                  'bg-blue-100 text-blue-700': area.alertLevel === 'high',
+                  'bg-gray-100 text-gray-700': area.alertLevel === 'moderate',
+                  'px-2 py-1 rounded text-xs font-semibold': true
+                }"
+              >
+                {{ area.alertLevel.toUpperCase() }}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-6 mt-6">
+          <div class="mb-4 flex items-center gap-2">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <rect x="3" y="12" width="4" height="8" />
+              <rect x="10" y="8" width="4" height="12" />
+              <rect x="17" y="4" width="4" height="16" />
+            </svg>
+            <span class="font-bold">Quick Actions</span>
+          </div>
+          <div class="space-y-3">
+            <button
+              class="w-full border px-3 py-2 rounded font-medium flex items-center justify-center gap-2 text-sm"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <rect x="3" y="7" width="18" height="13" rx="2" />
+                <path d="M16 3v4M8 3v4M3 10h18" />
+              </svg>
+              Create Relief Request
+            </button>
+            <button
+              class="w-full border px-3 py-2 rounded font-medium flex items-center justify-center gap-2 text-sm"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <rect x="1" y="3" width="15" height="13" rx="2" />
+                <path d="M16 8v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8" />
+                <path d="M8 12h.01" />
+              </svg>
+              Manage Donations
+            </button>
+            <button
+              class="w-full border px-3 py-2 rounded font-medium flex items-center justify-center gap-2 text-sm"
+            >
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <rect x="3" y="12" width="4" height="8" />
+                <rect x="10" y="8" width="4" height="12" />
+                <rect x="17" y="4" width="4" height="16" />
+              </svg>
+              View Full Analytics
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

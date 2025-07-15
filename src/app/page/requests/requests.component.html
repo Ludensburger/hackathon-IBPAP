@@ -1,0 +1,180 @@
+<!-- requests.component.html -->
+<div class="min-h-screen bg-background">
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white border-b">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center space-x-2">
+          <div
+            class="w-8 h-8 bg-[#0973dc] rounded-lg flex items-center justify-center"
+          >
+            <!-- Heart Icon SVG -->
+            <svg
+              class="w-5 h-5 text-white"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 21C12 21 4 13.5 4 8.5C4 5.42 6.42 3 9.5 3C11.24 3 12.91 3.81 14 5.08C15.09 3.81 16.76 3 18.5 3C21.58 3 24 5.42 24 8.5C24 13.5 16 21 16 21H12Z"
+              />
+            </svg>
+          </div>
+          <span class="text-xl font-bold text-gray-900"> BayanihanAid </span>
+        </div>
+        <div class="flex items-center space-x-8">
+          <a
+            routerLink="/home"
+            class="text-gray-600 hover:text-[#0973dc] transition-colors"
+            >Home</a
+          >
+          <a
+            routerLink="/dashboard"
+            class="text-gray-600 hover:text-[#0973dc] transition-colors"
+            >Dashboard</a
+          >
+          <a
+            routerLink="/requests"
+            class="text-[#0973dc] font-semibold hover:text-blue-800 transition-colors"
+            >Requests</a
+          >
+          <a
+            routerLink="/donations"
+            class="text-gray-600 hover:text-[#0973dc] transition-colors"
+            >Donations</a
+          >
+          <a
+            routerLink="/analytics"
+            class="text-gray-600 hover:text-[#0973dc] transition-colors"
+            >Analytics</a
+          >
+        </div>
+        <div class="flex items-center space-x-4">
+          <button
+            class="border px-3 py-1 rounded font-medium text-gray-600 hover:bg-[#0973dc] hover:text-white transition-colors"
+          >
+            Profile
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container mx-auto px-4 py-8">
+    <div class="mb-8 text-center">
+      <span
+        class="inline-block mb-6 px-3 py-1 rounded-full bg-blue-100 text-[#0973dc] text-sm font-medium"
+        >Relief Requests</span
+      >
+      <h1 class="text-4xl font-bold text-gray-900 mb-4">
+        Relief Requests Management
+      </h1>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        This page manages all relief good requests from barangays across the
+        Philippines.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+        <button
+          class="text-lg px-8 py-3 rounded bg-[#0973dc] text-white hover:bg-blue-800 transition flex items-center justify-center font-semibold shadow"
+        >
+          New Request
+          <svg
+            class="ml-2 w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <!-- Request Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div
+        class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb] flex flex-col"
+      >
+        <div class="flex items-center gap-2 mb-2">
+          <span class="font-semibold text-[#0973dc]">#REQ-001</span>
+          <span
+            class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-semibold"
+            >URGENT</span
+          >
+        </div>
+        <div class="mb-2">
+          <span class="font-bold text-gray-900">Barangay San Isidro</span>,
+          <span class="text-gray-600">Quezon City</span>
+        </div>
+        <div class="text-sm text-gray-600 mb-2">
+          120 households • Rice, Canned Goods, Water
+        </div>
+        <div class="text-xs text-gray-500 mb-4">Requested 2 hours ago</div>
+        <button
+          class="mt-auto border px-3 py-1 rounded font-medium text-gray-600 hover:bg-[#0973dc] hover:text-white transition-colors text-xs"
+        >
+          View Details
+        </button>
+      </div>
+      <div
+        class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb] flex flex-col"
+      >
+        <div class="flex items-center gap-2 mb-2">
+          <span class="font-semibold text-[#0973dc]">#REQ-002</span>
+          <span
+            class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-semibold"
+            >IN PROGRESS</span
+          >
+        </div>
+        <div class="mb-2">
+          <span class="font-bold text-gray-900">Barangay Mabini</span>,
+          <span class="text-gray-600">Pasig City</span>
+        </div>
+        <div class="text-sm text-gray-600 mb-2">
+          80 households • Medicine, Blankets
+        </div>
+        <div class="text-xs text-gray-500 mb-4">Requested 5 hours ago</div>
+        <button
+          class="mt-auto border px-3 py-1 rounded font-medium text-gray-600 hover:bg-[#0973dc] hover:text-white transition-colors text-xs"
+        >
+          View Details
+        </button>
+      </div>
+      <div
+        class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb] flex flex-col"
+      >
+        <div class="flex items-center gap-2 mb-2">
+          <span class="font-semibold text-[#0973dc]">#REQ-003</span>
+          <span
+            class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-semibold"
+            >COMPLETED</span
+          >
+        </div>
+        <div class="mb-2">
+          <span class="font-bold text-gray-900">Barangay Malinis</span>,
+          <span class="text-gray-600">Makati City</span>
+        </div>
+        <div class="text-sm text-gray-600 mb-2">
+          60 households • Water, Hygiene Kits
+        </div>
+        <div class="text-xs text-gray-500 mb-4">Requested 1 day ago</div>
+        <button
+          class="mt-auto border px-3 py-1 rounded font-medium text-gray-600 hover:bg-[#0973dc] hover:text-white transition-colors text-xs"
+        >
+          View Details
+        </button>
+      </div>
+    </div>
+    <ul
+      class="text-left text-sm text-muted-foreground space-y-1 mt-8 max-w-md mx-auto"
+    >
+      <li>• Submit new relief requests</li>
+      <li>• Track request status</li>
+      <li>• Priority-based sorting</li>
+      <li>• Real-time updates</li>
+      <li>• Household tracking</li>
+    </ul>
+  </div>
+</div>
