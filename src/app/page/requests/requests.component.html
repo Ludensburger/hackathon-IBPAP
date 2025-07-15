@@ -166,7 +166,7 @@
     </div>
     <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
       <button
-        class="text-lg px-8 py-3 rounded bg-[#0973dc] text-white hover:bg-blue-800 transition flex items-center justify-center font-semibold shadow animate-bounce"
+        class="text-lg px-8 py-3 rounded bg-[#0973dc] text-white hover:bg-blue-800 transition flex items-center justify-center font-semibold shadow"
       >
         New Request
         <svg
@@ -193,7 +193,9 @@
               status: 'urgent',
               households: 120,
               needs: 'Rice, Canned Goods, Water',
-              time: 'Requested 2 hours ago'
+              time: 'Requested 2 hours ago',
+              fromBarangay: 'Barangay San Isidro',
+              toBarangay: 'Barangay Mabini'
             },
             {
               id: '#REQ-002',
@@ -202,7 +204,9 @@
               status: 'in_progress',
               households: 80,
               needs: 'Medicine, Blankets',
-              time: 'Requested 5 hours ago'
+              time: 'Requested 5 hours ago',
+              fromBarangay: 'Barangay Mabini',
+              toBarangay: 'Barangay Malinis'
             },
             {
               id: '#REQ-003',
@@ -211,7 +215,9 @@
               status: 'completed',
               households: 60,
               needs: 'Water, Hygiene Kits',
-              time: 'Requested 1 day ago'
+              time: 'Requested 1 day ago',
+              fromBarangay: 'Barangay Malinis',
+              toBarangay: 'Barangay San Isidro'
             }
           ]
         "
@@ -241,6 +247,13 @@
           <span class="font-bold text-gray-900">{{ card.barangay }}</span
           >,
           <span class="text-gray-600">{{ card.city }}</span>
+        </div>
+        <div class="mb-1">
+          <span
+            class="inline-block bg-blue-50 text-blue-700 text-xs px-2 py-1 rounded"
+          >
+            {{ card.fromBarangay }} sent this to {{ card.toBarangay }}
+          </span>
         </div>
         <div class="text-sm text-gray-600 mb-2">
           {{ card.households }} households • {{ card.needs }}

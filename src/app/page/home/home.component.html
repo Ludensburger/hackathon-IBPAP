@@ -154,18 +154,15 @@
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div class="bg-white border-l-4 border-red-500 rounded shadow p-6">
           <div class="mb-2">
-            <svg
-              class="w-8 h-8 text-red-500"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+            <svg class="w-8 h-8 text-red-500" viewBox="0 0 24 24" fill="none">
+              <polygon
+                points="12,2 22,20 2,20"
+                fill="#f87171"
+                stroke="#b91c1c"
+                stroke-width="2"
               />
-              <path d="M12 9v4" />
-              <path d="M12 17h.01" />
+              <rect x="11" y="8.5" width="2" height="7" rx="1" fill="#fff" />
+              <circle cx="12" cy="17.5" r="1.3" fill="#fff" />
             </svg>
           </div>
           <div class="font-bold text-lg mb-1">Resource Scarcity</div>
@@ -178,13 +175,17 @@
           <div class="mb-2">
             <svg
               class="w-8 h-8 text-yellow-500"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
               viewBox="0 0 24 24"
+              fill="none"
+              stroke="#f59e42"
+              stroke-width="2"
+              stroke-linejoin="round"
             >
-              <rect x="3" y="7" width="18" height="13" rx="2" />
-              <path d="M16 3v4M8 3v4M3 10h18" />
+              <polygon points="3,7 12,2 21,7 12,12" fill="#fde68a" />
+              <polygon points="3,7 3,17 12,22 12,12" fill="#fde68a" />
+              <polygon points="21,7 21,17 12,22 12,12" fill="#fde68a" />
+              <line x1="3" y1="7" x2="21" y2="7" />
+              <line x1="12" y1="2" x2="12" y2="22" />
             </svg>
           </div>
           <div class="font-bold text-lg mb-1">Supply Mismatch</div>
@@ -196,13 +197,68 @@
           <div class="mb-2">
             <svg
               class="w-8 h-8 text-blue-400"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
               viewBox="0 0 24 24"
+              fill="none"
+              stroke="#3b82f6"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
+              <!-- Queue: three user icons side by side -->
+              <circle
+                cx="6"
+                cy="10"
+                r="2.2"
+                fill="#60a5fa"
+                stroke="#2563eb"
+                stroke-width="1.2"
+              />
+              <rect
+                x="3.8"
+                y="13"
+                width="4.4"
+                height="2"
+                rx="1"
+                fill="#bfdbfe"
+                stroke="#2563eb"
+                stroke-width="1.2"
+              />
+              <circle
+                cx="12"
+                cy="10"
+                r="2.2"
+                fill="#60a5fa"
+                stroke="#2563eb"
+                stroke-width="1.2"
+              />
+              <rect
+                x="9.8"
+                y="13"
+                width="4.4"
+                height="2"
+                rx="1"
+                fill="#bfdbfe"
+                stroke="#2563eb"
+                stroke-width="1.2"
+              />
+              <circle
+                cx="18"
+                cy="10"
+                r="2.2"
+                fill="#60a5fa"
+                stroke="#2563eb"
+                stroke-width="1.2"
+              />
+              <rect
+                x="15.8"
+                y="13"
+                width="4.4"
+                height="2"
+                rx="1"
+                fill="#bfdbfe"
+                stroke="#2563eb"
+                stroke-width="1.2"
+              />
             </svg>
           </div>
           <div class="font-bold text-lg mb-1">Poor Prioritization</div>
@@ -213,14 +269,43 @@
         <div class="bg-white border-l-4 border-blue-600 rounded shadow p-6">
           <div class="mb-2">
             <svg
-              class="w-8 h-8 text-blue-600"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
+              class="w-8 h-8 text-cyan-600"
               viewBox="0 0 24 24"
+              fill="none"
+              stroke="#06b6d4"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <ellipse cx="12" cy="12" rx="10" ry="10" />
-              <circle cx="12" cy="12" r="4" />
+              <!-- Clipboard icon for tracking -->
+              <rect
+                x="6"
+                y="4"
+                width="12"
+                height="16"
+                rx="2"
+                fill="#a7f3d0"
+                stroke="#06b6d4"
+                stroke-width="1.5"
+              />
+              <rect
+                x="9"
+                y="2"
+                width="6"
+                height="4"
+                rx="1.2"
+                fill="#22d3ee"
+                stroke="#06b6d4"
+                stroke-width="1.2"
+              />
+              <path d="M9 10h6" stroke="#0891b2" stroke-width="1.5" />
+              <path d="M9 14h3" stroke="#0891b2" stroke-width="1.5" />
+              <polyline
+                points="13,14 15,16 17,12"
+                fill="none"
+                stroke="#14b8a6"
+                stroke-width="1.7"
+              />
             </svg>
           </div>
           <div class="font-bold text-lg mb-1">No Tracking</div>
@@ -249,16 +334,38 @@
           class="bg-white rounded shadow p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
         >
           <div class="mb-4">
+            <!-- Unique: Request form icon -->
             <svg
               class="w-10 h-10 text-[#0973dc]"
               fill="none"
-              stroke="currentColor"
+              stroke="#0973dc"
               stroke-width="2"
               viewBox="0 0 24 24"
             >
-              <path d="M21 10.5V6a2 2 0 00-2-2H5a2 2 0 00-2 2v4.5" />
-              <path d="M3 10.5V18a2 2 0 002 2h14a2 2 0 002-2v-7.5" />
-              <path d="M7 18v-2a2 2 0 012-2h6a2 2 0 012 2v2" />
+              <rect
+                x="4"
+                y="4"
+                width="16"
+                height="18"
+                rx="2.5"
+                fill="#dbeafe"
+                stroke="#0973dc"
+              />
+              <path
+                d="M8 8h8M8 12h8M8 16h4"
+                stroke="#2563eb"
+                stroke-width="1.5"
+              />
+              <rect
+                x="7"
+                y="2"
+                width="10"
+                height="4"
+                rx="1.2"
+                fill="#60a5fa"
+                stroke="#2563eb"
+                stroke-width="1.2"
+              />
             </svg>
           </div>
           <div class="font-bold text-xl mb-2">Barangay Resource Requests</div>
@@ -271,15 +378,34 @@
           class="bg-white rounded shadow p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
         >
           <div class="mb-4">
+            <!-- Simple box icon for matching -->
             <svg
               class="w-10 h-10 text-[#0973dc]"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
               viewBox="0 0 24 24"
+              fill="none"
+              stroke="#2563eb"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
             >
-              <rect x="3" y="7" width="18" height="13" rx="2" />
-              <path d="M16 3v4M8 3v4M3 10h18" />
+              <rect
+                x="4"
+                y="6"
+                width="16"
+                height="12"
+                rx="2.5"
+                fill="#dbeafe"
+                stroke="#2563eb"
+              />
+              <rect
+                x="8"
+                y="10"
+                width="8"
+                height="4"
+                rx="1"
+                fill="#60a5fa"
+                stroke="#2563eb"
+              />
             </svg>
           </div>
           <div class="font-bold text-xl mb-2">Smart Resource Matching</div>
@@ -292,15 +418,38 @@
           class="bg-white rounded shadow p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
         >
           <div class="mb-4">
+            <!-- Unique: Bar chart icon for analytics -->
             <svg
               class="w-10 h-10 text-[#0973dc]"
               fill="none"
-              stroke="currentColor"
+              stroke="#0973dc"
               stroke-width="2"
               viewBox="0 0 24 24"
             >
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
+              <rect
+                x="4"
+                y="14"
+                width="3"
+                height="6"
+                fill="#60a5fa"
+                stroke="#2563eb"
+              />
+              <rect
+                x="10"
+                y="10"
+                width="3"
+                height="10"
+                fill="#2563eb"
+                stroke="#2563eb"
+              />
+              <rect
+                x="16"
+                y="6"
+                width="3"
+                height="14"
+                fill="#dbeafe"
+                stroke="#2563eb"
+              />
             </svg>
           </div>
           <div class="font-bold text-xl mb-2">Distribution Analytics</div>
@@ -313,15 +462,24 @@
           class="bg-white rounded shadow p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
         >
           <div class="mb-4">
+            <!-- Unique: Eye icon for transparency -->
             <svg
               class="w-10 h-10 text-[#0973dc]"
               fill="none"
-              stroke="currentColor"
+              stroke="#0973dc"
               stroke-width="2"
               viewBox="0 0 24 24"
             >
-              <rect x="3" y="7" width="18" height="13" rx="2" />
-              <path d="M16 3v4M8 3v4M3 10h18" />
+              <ellipse
+                cx="12"
+                cy="12"
+                rx="9"
+                ry="6"
+                fill="#dbeafe"
+                stroke="#2563eb"
+              />
+              <circle cx="12" cy="12" r="2.5" fill="#60a5fa" stroke="#2563eb" />
+              <circle cx="12" cy="12" r="1" fill="#2563eb" />
             </svg>
           </div>
           <div class="font-bold text-xl mb-2">Transparent Operations</div>
@@ -334,15 +492,37 @@
           class="bg-white rounded shadow p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
         >
           <div class="mb-4">
+            <!-- Unique: Home/household icon -->
             <svg
               class="w-10 h-10 text-[#0973dc]"
               fill="none"
-              stroke="currentColor"
+              stroke="#0973dc"
               stroke-width="2"
               viewBox="0 0 24 24"
             >
-              <circle cx="12" cy="12" r="10" />
-              <polyline points="12 6 12 12 16 14" />
+              <path
+                d="M3 12l9-7 9 7"
+                fill="#dbeafe"
+                stroke="#2563eb"
+                stroke-width="1.5"
+              />
+              <rect
+                x="7"
+                y="12"
+                width="10"
+                height="7"
+                fill="#60a5fa"
+                stroke="#2563eb"
+                stroke-width="1.5"
+              />
+              <rect
+                x="10"
+                y="15"
+                width="4"
+                height="4"
+                fill="#2563eb"
+                stroke="#2563eb"
+              />
             </svg>
           </div>
           <div class="font-bold text-xl mb-2">Household Tracking</div>
@@ -355,15 +535,17 @@
           class="bg-white rounded shadow p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
         >
           <div class="mb-4">
+            <!-- Unique: Target icon for priority-based -->
             <svg
               class="w-10 h-10 text-[#0973dc]"
               fill="none"
-              stroke="currentColor"
+              stroke="#0973dc"
               stroke-width="2"
               viewBox="0 0 24 24"
             >
-              <ellipse cx="12" cy="12" rx="10" ry="10" />
-              <circle cx="12" cy="12" r="4" />
+              <circle cx="12" cy="12" r="9" fill="#dbeafe" stroke="#2563eb" />
+              <circle cx="12" cy="12" r="5" fill="#60a5fa" stroke="#2563eb" />
+              <circle cx="12" cy="12" r="2" fill="#2563eb" />
             </svg>
           </div>
           <div class="font-bold text-xl mb-2">Priority-Based Distribution</div>
@@ -397,8 +579,28 @@
             stroke-width="2"
             viewBox="0 0 24 24"
           >
-            <circle cx="12" cy="12" r="10" />
-            <polyline points="12 6 12 12 16 14" />
+            <rect
+              x="6"
+              y="4"
+              width="12"
+              height="16"
+              rx="2"
+              fill="#dbeafe"
+              stroke="#2563eb"
+              stroke-width="1.5"
+            />
+            <rect
+              x="9"
+              y="2"
+              width="6"
+              height="4"
+              rx="1.2"
+              fill="#60a5fa"
+              stroke="#2563eb"
+              stroke-width="1.2"
+            />
+            <path d="M9 10h6" stroke="#0891b2" stroke-width="1.5" />
+            <path d="M9 14h3" stroke="#0891b2" stroke-width="1.5" />
           </svg>
           <div class="text-4xl md:text-5xl font-bold mb-2">150+</div>
           <div class="text-lg opacity-90">Barangays Registered</div>
@@ -411,37 +613,86 @@
             stroke-width="2"
             viewBox="0 0 24 24"
           >
-            <circle cx="12" cy="12" r="10" />
-            <polyline points="12 6 12 12 16 14" />
+            <path
+              d="M3 12l9-7 9 7"
+              fill="#dbeafe"
+              stroke="#2563eb"
+              stroke-width="1.5"
+            />
+            <rect
+              x="7"
+              y="12"
+              width="10"
+              height="7"
+              fill="#60a5fa"
+              stroke="#2563eb"
+              stroke-width="1.5"
+            />
+            <rect
+              x="10"
+              y="15"
+              width="4"
+              height="4"
+              fill="#2563eb"
+              stroke="#2563eb"
+            />
           </svg>
           <div class="text-4xl md:text-5xl font-bold mb-2">25K+</div>
           <div class="text-lg opacity-90">Households Served</div>
         </div>
         <div class="text-center">
           <svg
-            class="w-10 h-10 mx-auto mb-4 opacity-80"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
+            class="w-10 h-10 text-[#0973dc] mx-auto mb-4 opacity-80"
             viewBox="0 0 24 24"
+            fill="none"
+            stroke="#2563eb"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           >
-            <rect x="3" y="7" width="18" height="13" rx="2" />
-            <path d="M16 3v4M8 3v4M3 10h18" />
+            <rect
+              x="4"
+              y="6"
+              width="16"
+              height="12"
+              rx="2.5"
+              fill="#dbeafe"
+              stroke="#2563eb"
+            />
+            <rect
+              x="8"
+              y="10"
+              width="8"
+              height="4"
+              rx="1"
+              fill="#60a5fa"
+              stroke="#2563eb"
+            />
           </svg>
           <div class="text-4xl md:text-5xl font-bold mb-2">₱2.3M</div>
           <div class="text-lg opacity-90">Resources Distributed</div>
         </div>
         <div class="text-center">
-          <svg
-            class="w-10 h-10 mx-auto mb-4 opacity-80"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-          >
-            <rect x="3" y="7" width="18" height="13" rx="2" />
-            <path d="M16 3v4M8 3v4M3 10h18" />
-          </svg>
+          <div class="flex justify-center">
+            <svg
+              class="w-10 h-10 text-[#0973dc]"
+              fill="none"
+              stroke="#0973dc"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <ellipse
+                cx="12"
+                cy="12"
+                rx="9"
+                ry="6"
+                fill="#dbeafe"
+                stroke="#2563eb"
+              />
+              <circle cx="12" cy="12" r="2.5" fill="#60a5fa" stroke="#2563eb" />
+              <circle cx="12" cy="12" r="1" fill="#2563eb" />
+            </svg>
+          </div>
           <div class="text-4xl md:text-5xl font-bold mb-2">98%</div>
           <div class="text-lg opacity-90">Transparency Score</div>
         </div>
@@ -471,25 +722,34 @@
             viewBox="0 0 24 24"
           >
             <path
-              d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 8h2v-2H7v2zm0-4h2v-2H7v2zm0-4h2V7H7v2zm4 8h2v-2h-2v2zm0-4h2v-2h-2v2zm0-4h2V7h-2v2zm4 8h2v-2h-2v2zm0-4h2v-2h-2v2zm0-4h2V7h-2v2z"
-            /></svg
-          >Register Your Barangay</a
+              d="M12 4v16m8-8H4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Register Your Barangay</a
         >
         <a
           routerLink="/donations"
           class="text-lg px-8 py-3 rounded border border-[#0973dc] text-[#0973dc] hover:bg-blue-50 transition font-semibold flex items-center justify-center"
-          ><svg
+        >
+          <svg
             class="mr-2 w-5 h-5"
-            fill="none"
+            fill="#0973dc"
             stroke="currentColor"
-            stroke-width="2"
+            stroke-width="1.5"
             viewBox="0 0 24 24"
           >
-            <rect x="3" y="12" width="4" height="8" />
-            <rect x="10" y="8" width="4" height="12" />
-            <rect x="17" y="4" width="4" height="16" /></svg
-          >Become a Donor</a
-        >
+            <path
+              d="M12 21s-5.2-4.6-7.2-6.7C2.2 12.2 2 9.5 4 7.7c1.6-1.4 4.1-1.1 5.4.5L12 10l2.6-1.8c1.3-1.6 3.8-1.9 5.4-.5 2 1.8 1.8 4.5-.8 6.6C17.2 16.4 12 21 12 21z"
+              fill="#0973dc"
+              stroke="#0973dc"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          Become a Donor
+        </a>
       </div>
     </div>
   </section>
