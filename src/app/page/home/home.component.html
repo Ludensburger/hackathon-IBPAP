@@ -1,13 +1,610 @@
-<div class="min-h-screen flex flex-col items-center justify-center bg-white">
-  <h1 class="text-5xl font-bold text-[#0973dc] mb-4">
-    Welcome to BayanihanAid
-  </h1>
-  <p class="text-lg text-gray-700 mb-6">
-    A modern disaster relief platform for communities and donors.
-  </p>
-  <a
-    routerLink="/dashboard"
-    class="px-6 py-2 rounded bg-[#0973dc] text-white font-semibold hover:bg-blue-800 transition"
-    >Go to Dashboard</a
-  >
+<div class="min-h-screen bg-background">
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b">
+    <div class="container mx-auto px-4">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center space-x-2">
+          <div
+            class="w-8 h-8 bg-[#0973dc] rounded-lg flex items-center justify-center"
+          >
+            <svg
+              class="w-5 h-5 text-white"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 21C12 21 4 13.5 4 8.5C4 5.42 6.42 3 9.5 3C11.24 3 12.91 3.81 14 5.08C15.09 3.81 16.76 3 18.5 3C21.58 3 24 5.42 24 8.5C24 13.5 16 21 16 21H12Z"
+              />
+            </svg>
+          </div>
+          <span class="text-xl font-bold text-gray-900">BayanihanAid</span>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a
+            routerLink="/home"
+            routerLinkActive="text-[#0973dc] font-semibold"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="text-gray-900 hover:text-[#0973dc] transition-colors"
+            >Home</a
+          >
+          <a
+            routerLink="/dashboard"
+            routerLinkActive="text-[#0973dc] font-semibold"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="text-gray-600 hover:text-[#0973dc] transition-colors"
+            >Dashboard</a
+          >
+          <a
+            routerLink="/requests"
+            routerLinkActive="text-[#0973dc] font-semibold"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="text-gray-600 hover:text-[#0973dc] transition-colors"
+            >Requests</a
+          >
+          <a
+            routerLink="/donations"
+            routerLinkActive="text-[#0973dc] font-semibold"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="text-gray-600 hover:text-[#0973dc] transition-colors"
+            >Donations</a
+          >
+          <a
+            routerLink="/analytics"
+            routerLinkActive="text-[#0973dc] font-semibold"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="text-gray-600 hover:text-[#0973dc] transition-colors"
+            >Analytics</a
+          >
+          <a
+            href="#about"
+            class="text-gray-600 hover:text-[#0973dc] transition-colors"
+            >About</a
+          >
+        </div>
+        <div class="hidden md:flex items-center space-x-4">
+          <button
+            class="border px-3 py-1 rounded font-medium text-gray-600 hover:bg-[#0973dc] hover:text-white transition-colors"
+          >
+            Sign In
+          </button>
+          <button
+            class="px-3 py-1 rounded font-medium bg-[#0973dc] text-white hover:bg-blue-800 transition-colors"
+          >
+            Get Started
+          </button>
+        </div>
+        <!-- Mobile menu button (not functional in Angular, for demo only) -->
+        <button class="md:hidden">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="py-20 px-4">
+    <div class="container mx-auto text-center">
+      <span
+        class="inline-block mb-6 px-3 py-1 rounded-full bg-blue-100 text-[#0973dc] text-sm font-medium"
+        >🇵🇭 Disaster Relief Technology Platform</span
+      >
+      <h1
+        class="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight"
+      >
+        Transforming Disaster Relief
+        <span class="text-[#0973dc] block">in the Philippines</span>
+      </h1>
+      <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+        BayanihanAid is a centralized platform that connects barangays, donors,
+        and government agencies to ensure transparent, efficient, and equitable
+        distribution of relief goods during disasters.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          routerLink="/dashboard"
+          class="text-lg px-8 py-3 rounded bg-[#0973dc] text-white font-semibold hover:bg-blue-800 transition font-semibold shadow flex items-center justify-center"
+          >Start Relief Operation
+          <svg
+            class="ml-2 w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+        <a
+          href="#demo"
+          class="text-lg px-8 py-3 rounded border border-[#0973dc] text-[#0973dc] hover:bg-blue-50 transition font-semibold"
+          >View Demo</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Section -->
+  <section class="py-16 px-4 bg-blue-50">
+    <div class="container mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Solving Critical Relief Challenges
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Current disaster relief operations face systemic issues that prevent
+          effective aid distribution
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white border-l-4 border-red-500 rounded shadow p-6">
+          <div class="mb-2">
+            <svg
+              class="w-8 h-8 text-red-500"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+              />
+              <path d="M12 9v4" />
+              <path d="M12 17h.01" />
+            </svg>
+          </div>
+          <div class="font-bold text-lg mb-1">Resource Scarcity</div>
+          <div class="text-gray-600">
+            No centralized view of barangay needs leads to uneven aid
+            distribution
+          </div>
+        </div>
+        <div class="bg-white border-l-4 border-yellow-500 rounded shadow p-6">
+          <div class="mb-2">
+            <svg
+              class="w-8 h-8 text-yellow-500"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <rect x="3" y="7" width="18" height="13" rx="2" />
+              <path d="M16 3v4M8 3v4M3 10h18" />
+            </svg>
+          </div>
+          <div class="font-bold text-lg mb-1">Supply Mismatch</div>
+          <div class="text-gray-600">
+            No real-time matching between donors and actual needs
+          </div>
+        </div>
+        <div class="bg-white border-l-4 border-blue-400 rounded shadow p-6">
+          <div class="mb-2">
+            <svg
+              class="w-8 h-8 text-blue-400"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <div class="font-bold text-lg mb-1">Poor Prioritization</div>
+          <div class="text-gray-600">
+            Lack of priority logic results in first-come distribution
+          </div>
+        </div>
+        <div class="bg-white border-l-4 border-blue-600 rounded shadow p-6">
+          <div class="mb-2">
+            <svg
+              class="w-8 h-8 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <ellipse cx="12" cy="12" rx="10" ry="10" />
+              <circle cx="12" cy="12" r="4" />
+            </svg>
+          </div>
+          <div class="font-bold text-lg mb-1">No Tracking</div>
+          <div class="text-gray-600">
+            No per-household tracking enables double-dipping
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-20 px-4">
+    <div class="container mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Comprehensive Relief Management
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Our platform provides end-to-end solutions for transparent and
+          efficient disaster relief operations
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          class="bg-white rounded shadow p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+        >
+          <div class="mb-4">
+            <svg
+              class="w-10 h-10 text-[#0973dc]"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path d="M21 10.5V6a2 2 0 00-2-2H5a2 2 0 00-2 2v4.5" />
+              <path d="M3 10.5V18a2 2 0 002 2h14a2 2 0 002-2v-7.5" />
+              <path d="M7 18v-2a2 2 0 012-2h6a2 2 0 012 2v2" />
+            </svg>
+          </div>
+          <div class="font-bold text-xl mb-2">Barangay Resource Requests</div>
+          <div class="text-gray-600">
+            Centralized platform for barangays to submit detailed relief good
+            requests with real-time status tracking.
+          </div>
+        </div>
+        <div
+          class="bg-white rounded shadow p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+        >
+          <div class="mb-4">
+            <svg
+              class="w-10 h-10 text-[#0973dc]"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <rect x="3" y="7" width="18" height="13" rx="2" />
+              <path d="M16 3v4M8 3v4M3 10h18" />
+            </svg>
+          </div>
+          <div class="font-bold text-xl mb-2">Smart Resource Matching</div>
+          <div class="text-gray-600">
+            AI-powered matching system connects available supplies with actual
+            needs, preventing oversupply and shortages.
+          </div>
+        </div>
+        <div
+          class="bg-white rounded shadow p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+        >
+          <div class="mb-4">
+            <svg
+              class="w-10 h-10 text-[#0973dc]"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <div class="font-bold text-xl mb-2">Distribution Analytics</div>
+          <div class="text-gray-600">
+            Real-time monitoring and analytics to optimize resource allocation
+            and identify critical gaps.
+          </div>
+        </div>
+        <div
+          class="bg-white rounded shadow p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+        >
+          <div class="mb-4">
+            <svg
+              class="w-10 h-10 text-[#0973dc]"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <rect x="3" y="7" width="18" height="13" rx="2" />
+              <path d="M16 3v4M8 3v4M3 10h18" />
+            </svg>
+          </div>
+          <div class="font-bold text-xl mb-2">Transparent Operations</div>
+          <div class="text-gray-600">
+            Complete transparency in relief operations with audit trails and
+            public reporting to prevent corruption.
+          </div>
+        </div>
+        <div
+          class="bg-white rounded shadow p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+        >
+          <div class="mb-4">
+            <svg
+              class="w-10 h-10 text-[#0973dc]"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <div class="font-bold text-xl mb-2">Household Tracking</div>
+          <div class="text-gray-600">
+            Per-household tracking system ensures equitable distribution and
+            prevents double-dipping.
+          </div>
+        </div>
+        <div
+          class="bg-white rounded shadow p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+        >
+          <div class="mb-4">
+            <svg
+              class="w-10 h-10 text-[#0973dc]"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <ellipse cx="12" cy="12" rx="10" ry="10" />
+              <circle cx="12" cy="12" r="4" />
+            </svg>
+          </div>
+          <div class="font-bold text-xl mb-2">Priority-Based Distribution</div>
+          <div class="text-gray-600">
+            Intelligent prioritization based on urgency, vulnerability, and
+            critical needs assessment.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="py-16 px-4 bg-[#0973dc] text-white">
+    <div class="container mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Impact by the Numbers
+        </h2>
+        <p class="text-lg opacity-90 max-w-2xl mx-auto">
+          Real results from communities across the Philippines using
+          BayanihanAid
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center">
+          <svg
+            class="w-10 h-10 mx-auto mb-4 opacity-80"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          <div class="text-4xl md:text-5xl font-bold mb-2">150+</div>
+          <div class="text-lg opacity-90">Barangays Registered</div>
+        </div>
+        <div class="text-center">
+          <svg
+            class="w-10 h-10 mx-auto mb-4 opacity-80"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <polyline points="12 6 12 12 16 14" />
+          </svg>
+          <div class="text-4xl md:text-5xl font-bold mb-2">25K+</div>
+          <div class="text-lg opacity-90">Households Served</div>
+        </div>
+        <div class="text-center">
+          <svg
+            class="w-10 h-10 mx-auto mb-4 opacity-80"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <rect x="3" y="7" width="18" height="13" rx="2" />
+            <path d="M16 3v4M8 3v4M3 10h18" />
+          </svg>
+          <div class="text-4xl md:text-5xl font-bold mb-2">₱2.3M</div>
+          <div class="text-lg opacity-90">Resources Distributed</div>
+        </div>
+        <div class="text-center">
+          <svg
+            class="w-10 h-10 mx-auto mb-4 opacity-80"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <rect x="3" y="7" width="18" height="13" rx="2" />
+            <path d="M16 3v4M8 3v4M3 10h18" />
+          </svg>
+          <div class="text-4xl md:text-5xl font-bold mb-2">98%</div>
+          <div class="text-lg opacity-90">Transparency Score</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-20 px-4">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        Ready to Transform Relief Operations?
+      </h2>
+      <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+        Join barangays, LGUs, and NGOs across the Philippines in building more
+        effective disaster response
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          routerLink="/dashboard"
+          class="text-lg px-8 py-3 rounded bg-[#0973dc] text-white font-semibold hover:bg-blue-800 transition flex items-center justify-center"
+          ><svg
+            class="mr-2 w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 8h2v-2H7v2zm0-4h2v-2H7v2zm0-4h2V7H7v2zm4 8h2v-2h-2v2zm0-4h2v-2h-2v2zm0-4h2V7h-2v2zm4 8h2v-2h-2v2zm0-4h2v-2h-2v2zm0-4h2V7h-2v2z"
+            /></svg
+          >Register Your Barangay</a
+        >
+        <a
+          routerLink="/donations"
+          class="text-lg px-8 py-3 rounded border border-[#0973dc] text-[#0973dc] hover:bg-blue-50 transition font-semibold flex items-center justify-center"
+          ><svg
+            class="mr-2 w-5 h-5"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <rect x="3" y="12" width="4" height="8" />
+            <rect x="10" y="8" width="4" height="12" />
+            <rect x="17" y="4" width="4" height="16" /></svg
+          >Become a Donor</a
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-50 py-12 px-4">
+    <div class="container mx-auto">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center space-x-2 mb-4">
+            <div
+              class="w-8 h-8 bg-[#0973dc] rounded-lg flex items-center justify-center"
+            >
+              <svg
+                class="w-5 h-5 text-white"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 21C12 21 4 13.5 4 8.5C4 5.42 6.42 3 9.5 3C11.24 3 12.91 3.81 14 5.08C15.09 3.81 16.76 3 18.5 3C21.58 3 24 5.42 24 8.5C24 13.5 16 21 16 21H12Z"
+                />
+              </svg>
+            </div>
+            <span class="text-xl font-bold">BayanihanAid</span>
+          </div>
+          <p class="text-gray-600">
+            Connecting communities for effective disaster relief in the
+            Philippines.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-4">Platform</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>
+              <a href="#" class="hover:text-[#0973dc] transition-colors"
+                >Relief Requests</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#0973dc] transition-colors"
+                >Donation Management</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#0973dc] transition-colors"
+                >Analytics Dashboard</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#0973dc] transition-colors"
+                >Mobile App</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-4">Resources</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li>
+              <a href="#" class="hover:text-[#0973dc] transition-colors"
+                >Documentation</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#0973dc] transition-colors"
+                >Training Materials</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#0973dc] transition-colors"
+                >API Reference</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#0973dc] transition-colors"
+                >Support Center</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-semibold mb-4">Contact</h3>
+          <div class="space-y-2 text-gray-600">
+            <div class="flex items-center space-x-2">
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M22 16.92V19a2 2 0 01-2 2h-1a19.72 19.72 0 01-8.63-3.37A19.5 19.5 0 013.37 9.63 19.72 19.72 0 010 1V0a2 2 0 012-2h2.09a2 2 0 012 1.72c.13.81.36 1.6.68 2.36a2 2 0 01-.45 2.11l-1.27 1.27a16 16 0 006.29 6.29l1.27-1.27a2 2 0 012.11-.45c.76.32 1.55.55 2.36.68A2 2 0 0124 2.09V4a2 2 0 01-2 2h-1.08z"
+                />
+              </svg>
+              <span>+63 (02) 8123-4567</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <svg
+                class="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path d="M4 4h16v16H4z" />
+                <path d="M22 6l-10 7L2 6" />
+              </svg>
+              <span>support&#64;bayanihanaid.ph</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border-t mt-8 pt-8 text-center text-gray-600">
+        <p>
+          &copy; 2024 BayanihanAid. Built for the Filipino spirit of community
+          service.
+        </p>
+      </div>
+    </div>
+  </footer>
 </div>

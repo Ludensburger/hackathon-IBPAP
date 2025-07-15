@@ -26,26 +26,36 @@
         <div class="flex items-center space-x-8">
           <a
             routerLink="/home"
+            routerLinkActive="text-[#0973dc] font-semibold"
+            [routerLinkActiveOptions]="{ exact: true }"
             class="text-gray-600 hover:text-[#0973dc] transition-colors"
             >Home</a
           >
           <a
             routerLink="/dashboard"
-            class="text-[#0973dc] font-semibold hover:text-blue-800 transition-colors"
+            routerLinkActive="text-[#0973dc] font-semibold"
+            [routerLinkActiveOptions]="{ exact: true }"
+            class="text-gray-600 hover:text-[#0973dc] transition-colors"
             >Dashboard</a
           >
           <a
             routerLink="/requests"
+            routerLinkActive="text-[#0973dc] font-semibold"
+            [routerLinkActiveOptions]="{ exact: true }"
             class="text-gray-600 hover:text-[#0973dc] transition-colors"
             >Requests</a
           >
           <a
             routerLink="/donations"
+            routerLinkActive="text-[#0973dc] font-semibold"
+            [routerLinkActiveOptions]="{ exact: true }"
             class="text-gray-600 hover:text-[#0973dc] transition-colors"
             >Donations</a
           >
           <a
             routerLink="/analytics"
+            routerLinkActive="text-[#0973dc] font-semibold"
+            [routerLinkActiveOptions]="{ exact: true }"
             class="text-gray-600 hover:text-[#0973dc] transition-colors"
             >Analytics</a
           >
