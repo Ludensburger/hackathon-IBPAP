@@ -79,7 +79,7 @@
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
         <button
-          class="text-lg px-8 py-3 rounded bg-[#0973dc] text-white hover:bg-blue-800 transition flex items-center justify-center font-semibold shadow"
+          class="text-lg px-8 py-3 rounded bg-[#0973dc] text-white hover:bg-blue-800 transition flex items-center justify-center font-semibold shadow animate-bounce"
         >
           New Donation
           <svg
@@ -95,70 +95,66 @@
         </button>
       </div>
     </div>
-    <!-- Donation Cards -->
+    <!-- Donation Cards (animated, interactive) -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div
-        class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb] flex flex-col"
+        *ngFor="
+          let donation of [
+            {
+              id: '#DON-001',
+              donor: 'Juan Dela Cruz',
+              type: 'Individual',
+              status: 'received',
+              items: 'Rice, Canned Goods, Water',
+              time: 'Donated 3 hours ago'
+            },
+            {
+              id: '#DON-002',
+              donor: 'ABC Foundation',
+              type: 'Organization',
+              status: 'in_transit',
+              items: 'Medicine, Blankets',
+              time: 'Donated 6 hours ago'
+            },
+            {
+              id: '#DON-003',
+              donor: 'LGU Makati',
+              type: 'Government',
+              status: 'pending',
+              items: 'Water, Hygiene Kits',
+              time: 'Donated 1 day ago'
+            }
+          ]
+        "
+        class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb] flex flex-col group transform transition-transform hover:scale-105 hover:shadow-xl cursor-pointer"
       >
         <div class="flex items-center gap-2 mb-2">
-          <span class="font-semibold text-[#0973dc]">#DON-001</span>
+          <span class="font-semibold text-[#0973dc]">{{ donation.id }}</span>
           <span
-            class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-semibold"
-            >RECEIVED</span
+            [ngClass]="{
+              'bg-green-100 text-green-700': donation.status === 'received',
+              'bg-blue-100 text-blue-700': donation.status === 'in_transit',
+              'bg-gray-100 text-gray-700': donation.status === 'pending',
+              'px-2 py-1 rounded text-xs font-semibold': true
+            }"
           >
+            {{
+              donation.status === "received"
+                ? "RECEIVED"
+                : donation.status === "in_transit"
+                ? "IN TRANSIT"
+                : "PENDING"
+            }}
+          </span>
         </div>
         <div class="mb-2">
-          <span class="font-bold text-gray-900">Juan Dela Cruz</span>
-          <span class="text-gray-600">(Individual)</span>
+          <span class="font-bold text-gray-900">{{ donation.donor }}</span>
+          <span class="text-gray-600">({{ donation.type }})</span>
         </div>
-        <div class="text-sm text-gray-600 mb-2">Rice, Canned Goods, Water</div>
-        <div class="text-xs text-gray-500 mb-4">Donated 3 hours ago</div>
+        <div class="text-sm text-gray-600 mb-2">{{ donation.items }}</div>
+        <div class="text-xs text-gray-500 mb-4">{{ donation.time }}</div>
         <button
-          class="mt-auto border px-3 py-1 rounded font-medium text-gray-600 hover:bg-[#0973dc] hover:text-white transition-colors text-xs"
-        >
-          View Details
-        </button>
-      </div>
-      <div
-        class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb] flex flex-col"
-      >
-        <div class="flex items-center gap-2 mb-2">
-          <span class="font-semibold text-[#0973dc]">#DON-002</span>
-          <span
-            class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-semibold"
-            >IN TRANSIT</span
-          >
-        </div>
-        <div class="mb-2">
-          <span class="font-bold text-gray-900">ABC Foundation</span>
-          <span class="text-gray-600">(Organization)</span>
-        </div>
-        <div class="text-sm text-gray-600 mb-2">Medicine, Blankets</div>
-        <div class="text-xs text-gray-500 mb-4">Donated 6 hours ago</div>
-        <button
-          class="mt-auto border px-3 py-1 rounded font-medium text-gray-600 hover:bg-[#0973dc] hover:text-white transition-colors text-xs"
-        >
-          View Details
-        </button>
-      </div>
-      <div
-        class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb] flex flex-col"
-      >
-        <div class="flex items-center gap-2 mb-2">
-          <span class="font-semibold text-[#0973dc]">#DON-003</span>
-          <span
-            class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-semibold"
-            >PENDING</span
-          >
-        </div>
-        <div class="mb-2">
-          <span class="font-bold text-gray-900">LGU Makati</span>
-          <span class="text-gray-600">(Government)</span>
-        </div>
-        <div class="text-sm text-gray-600 mb-2">Water, Hygiene Kits</div>
-        <div class="text-xs text-gray-500 mb-4">Donated 1 day ago</div>
-        <button
-          class="mt-auto border px-3 py-1 rounded font-medium text-gray-600 hover:bg-[#0973dc] hover:text-white transition-colors text-xs"
+          class="mt-auto border px-3 py-1 rounded font-medium text-gray-600 hover:bg-[#0973dc] hover:text-white transition-colors text-xs group-hover:scale-105 group-hover:shadow"
         >
           View Details
         </button>
