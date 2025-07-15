@@ -326,31 +326,62 @@
                 </p>
               </div>
               <div class="flex items-center gap-2">
+                <!-- Urgent: Exclamation Triangle -->
                 <svg
                   *ngIf="request.status === 'urgent'"
-                  class="w-5 h-5 text-red-600 animate-pulse"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
+                  class="w-5 h-5 text-red-600"
                   viewBox="0 0 24 24"
+                  fill="none"
+                  aria-label="Urgent"
                 >
-                  <path d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  <polygon
+                    points="12,2 22,20 2,20"
+                    fill="#f87171"
+                    stroke="#b91c1c"
+                    stroke-width="1.5"
+                  />
+                  <rect x="11" y="9" width="2" height="6" rx="1" fill="#fff" />
+                  <circle cx="12" cy="17" r="1.2" fill="#fff" />
                 </svg>
+                <!-- In Progress: Box/Parcel Icon -->
                 <svg
                   *ngIf="request.status === 'in_progress'"
-                  class="w-5 h-5 text-blue-600 animate-spin-slow"
+                  class="w-5 h-5 text-blue-600"
+                  viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
-                  viewBox="0 0 24 24"
+                  aria-label="In Progress"
                 >
-                  <rect x="1" y="3" width="15" height="13" rx="2" />
-                  <path d="M16 8v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8" />
-                  <path d="M8 12h.01" />
+                  <rect
+                    x="3"
+                    y="7"
+                    width="13"
+                    height="10"
+                    rx="2"
+                    stroke="#2563eb"
+                    fill="#60a5fa"
+                  />
+                  <rect
+                    x="16"
+                    y="11"
+                    width="5"
+                    height="6"
+                    rx="1"
+                    stroke="#2563eb"
+                    fill="#60a5fa"
+                  />
+                  <circle cx="7.5" cy="17.5" r="1.5" fill="#2563eb" />
+                  <circle cx="18.5" cy="17.5" r="1.5" fill="#2563eb" />
+                  <path
+                    d="M3 7V5a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v2"
+                    stroke="#2563eb"
+                  />
+                  <path d="M16 13h5" stroke="#2563eb" />
                 </svg>
                 <svg
                   *ngIf="request.status === 'completed'"
-                  class="w-5 h-5 text-green-600 animate-bounce"
+                  class="w-5 h-5 text-green-600"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
