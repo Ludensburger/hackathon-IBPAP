@@ -79,94 +79,175 @@
         This page manages all relief good requests from barangays across the
         Philippines.
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-        <button
-          class="text-lg px-8 py-3 rounded bg-[#0973dc] text-white hover:bg-blue-800 transition flex items-center justify-center font-semibold shadow"
-        >
-          New Request
-          <svg
-            class="ml-2 w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
-          >
-            <line x1="12" y1="5" x2="12" y2="19" />
-            <line x1="5" y1="12" x2="19" y2="12" />
-          </svg>
-        </button>
-      </div>
     </div>
-    <!-- Request Cards -->
+
+    <!-- Demo Requests List -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div
-        class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb] flex flex-col"
+        *ngFor="
+          let req of [
+            {
+              id: 'REQ-001',
+              barangay: 'Barangay 1',
+              status: 'urgent',
+              needs: ['Rice', 'Water'],
+              households: 120,
+              timeAgo: '5m ago'
+            },
+            {
+              id: 'REQ-002',
+              barangay: 'Barangay 2',
+              status: 'in_progress',
+              needs: ['Canned Goods'],
+              households: 80,
+              timeAgo: '20m ago'
+            },
+            {
+              id: 'REQ-003',
+              barangay: 'Barangay 3',
+              status: 'completed',
+              needs: ['Blankets'],
+              households: 50,
+              timeAgo: '1h ago'
+            }
+          ]
+        "
+        class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb] transform transition-transform hover:scale-105 cursor-pointer group"
       >
         <div class="flex items-center gap-2 mb-2">
-          <span class="font-semibold text-[#0973dc]">#REQ-001</span>
+          <span class="font-semibold text-[#0973dc]">{{ req.id }}</span>
           <span
-            class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-semibold"
-            >URGENT</span
+            [ngClass]="{
+              'bg-red-100 text-red-700': req.status === 'urgent',
+              'bg-blue-100 text-blue-700': req.status === 'in_progress',
+              'bg-gray-100 text-gray-700': req.status === 'completed',
+              'px-2 py-1 rounded text-xs font-semibold': true
+            }"
           >
+            {{
+              req.status === "urgent"
+                ? "URGENT"
+                : req.status === "in_progress"
+                ? "IN PROGRESS"
+                : "COMPLETED"
+            }}
+          </span>
         </div>
-        <div class="mb-2">
-          <span class="font-bold text-gray-900">Barangay San Isidro</span>,
-          <span class="text-gray-600">Quezon City</span>
+        <div class="mb-1 text-lg font-bold text-gray-900">
+          {{ req.barangay }}
         </div>
         <div class="text-sm text-gray-600 mb-2">
-          120 households • Rice, Canned Goods, Water
+          Households: {{ req.households }}
         </div>
-        <div class="text-xs text-gray-500 mb-4">Requested 2 hours ago</div>
-        <button
-          class="mt-auto border px-3 py-1 rounded font-medium text-gray-600 hover:bg-[#0973dc] hover:text-white transition-colors text-xs"
-        >
-          View Details
-        </button>
+        <div class="text-sm text-gray-600 mb-2">
+          Needs: {{ req.needs.join(", ") }}
+        </div>
+        <div class="text-xs text-gray-400 mb-4">{{ req.timeAgo }}</div>
+        <div class="flex gap-2">
+          <button
+            class="px-3 py-1 rounded bg-[#0973dc] text-white text-xs font-semibold hover:bg-blue-800 transition"
+          >
+            View
+          </button>
+          <button
+            *ngIf="req.status !== 'completed'"
+            class="px-3 py-1 rounded border border-[#0973dc] text-[#0973dc] text-xs font-semibold hover:bg-blue-50 transition"
+          >
+            Approve
+          </button>
+          <button
+            *ngIf="req.status === 'in_progress'"
+            class="px-3 py-1 rounded border border-green-500 text-green-600 text-xs font-semibold hover:bg-green-50 transition"
+          >
+            Mark Complete
+          </button>
+        </div>
       </div>
-      <div
-        class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb] flex flex-col"
+    </div>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+      <button
+        class="text-lg px-8 py-3 rounded bg-[#0973dc] text-white hover:bg-blue-800 transition flex items-center justify-center font-semibold shadow animate-bounce"
       >
-        <div class="flex items-center gap-2 mb-2">
-          <span class="font-semibold text-[#0973dc]">#REQ-002</span>
-          <span
-            class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-semibold"
-            >IN PROGRESS</span
-          >
-        </div>
-        <div class="mb-2">
-          <span class="font-bold text-gray-900">Barangay Mabini</span>,
-          <span class="text-gray-600">Pasig City</span>
-        </div>
-        <div class="text-sm text-gray-600 mb-2">
-          80 households • Medicine, Blankets
-        </div>
-        <div class="text-xs text-gray-500 mb-4">Requested 5 hours ago</div>
-        <button
-          class="mt-auto border px-3 py-1 rounded font-medium text-gray-600 hover:bg-[#0973dc] hover:text-white transition-colors text-xs"
+        New Request
+        <svg
+          class="ml-2 w-5 h-5"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
         >
-          View Details
-        </button>
-      </div>
+          <line x1="12" y1="5" x2="12" y2="19" />
+          <line x1="5" y1="12" x2="19" y2="12" />
+        </svg>
+      </button>
+    </div>
+    <!-- Request Cards (animated, interactive) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <div
-        class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb] flex flex-col"
+        *ngFor="
+          let card of [
+            {
+              id: '#REQ-001',
+              barangay: 'Barangay San Isidro',
+              city: 'Quezon City',
+              status: 'urgent',
+              households: 120,
+              needs: 'Rice, Canned Goods, Water',
+              time: 'Requested 2 hours ago'
+            },
+            {
+              id: '#REQ-002',
+              barangay: 'Barangay Mabini',
+              city: 'Pasig City',
+              status: 'in_progress',
+              households: 80,
+              needs: 'Medicine, Blankets',
+              time: 'Requested 5 hours ago'
+            },
+            {
+              id: '#REQ-003',
+              barangay: 'Barangay Malinis',
+              city: 'Makati City',
+              status: 'completed',
+              households: 60,
+              needs: 'Water, Hygiene Kits',
+              time: 'Requested 1 day ago'
+            }
+          ]
+        "
+        class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb] flex flex-col group transform transition-transform hover:scale-105 hover:shadow-xl cursor-pointer"
       >
         <div class="flex items-center gap-2 mb-2">
-          <span class="font-semibold text-[#0973dc]">#REQ-003</span>
+          <span class="font-semibold text-[#0973dc]">{{ card.id }}</span>
           <span
-            class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-semibold"
-            >COMPLETED</span
+            [ngClass]="{
+              'bg-red-100 text-red-700 animate-pulse': card.status === 'urgent',
+              'bg-blue-100 text-blue-700 animate-spin-slow':
+                card.status === 'in_progress',
+              'bg-gray-100 text-gray-700': card.status === 'completed',
+              'px-2 py-1 rounded text-xs font-semibold': true
+            }"
           >
+            {{
+              card.status === "urgent"
+                ? "URGENT"
+                : card.status === "in_progress"
+                ? "IN PROGRESS"
+                : "COMPLETED"
+            }}
+          </span>
         </div>
         <div class="mb-2">
-          <span class="font-bold text-gray-900">Barangay Malinis</span>,
-          <span class="text-gray-600">Makati City</span>
+          <span class="font-bold text-gray-900">{{ card.barangay }}</span
+          >,
+          <span class="text-gray-600">{{ card.city }}</span>
         </div>
         <div class="text-sm text-gray-600 mb-2">
-          60 households • Water, Hygiene Kits
+          {{ card.households }} households • {{ card.needs }}
         </div>
-        <div class="text-xs text-gray-500 mb-4">Requested 1 day ago</div>
+        <div class="text-xs text-gray-500 mb-4">{{ card.time }}</div>
         <button
-          class="mt-auto border px-3 py-1 rounded font-medium text-gray-600 hover:bg-[#0973dc] hover:text-white transition-colors text-xs"
+          class="mt-auto border px-3 py-1 rounded font-medium text-gray-600 hover:bg-[#0973dc] hover:text-white transition-colors text-xs group-hover:scale-105 group-hover:shadow"
         >
           View Details
         </button>

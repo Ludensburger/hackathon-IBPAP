@@ -112,9 +112,11 @@
       </div>
     </div>
 
-    <!-- Stats Overview -->
+    <!-- Stats Overview with animation and progress bars -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-      <div class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb]">
+      <div
+        class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb] group transform transition-transform hover:scale-105 cursor-pointer relative overflow-hidden"
+      >
         <div class="flex flex-row items-center justify-between pb-2">
           <span class="text-sm font-semibold text-gray-700"
             >Active Requests</span
@@ -129,10 +131,30 @@
             <path d="M12 9v2m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
         </div>
-        <div class="text-2xl font-bold text-gray-900">47</div>
+        <div class="text-2xl font-bold text-gray-900 flex items-center gap-2">
+          47
+          <span class="animate-bounce text-xs text-red-500 font-semibold"
+            >●</span
+          >
+        </div>
         <p class="text-xs text-gray-500">+12 from yesterday</p>
+        <div class="mt-2 h-2 w-full bg-blue-100 rounded-full">
+          <div
+            class="h-2 bg-[#0973dc] rounded-full transition-all duration-700"
+            style="width: 80%"
+          ></div>
+        </div>
+        <div
+          class="absolute right-2 top-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        >
+          <span class="bg-[#0973dc] text-white text-xs px-2 py-1 rounded shadow"
+            >View All</span
+          >
+        </div>
       </div>
-      <div class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb]">
+      <div
+        class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb] group transform transition-transform hover:scale-105 cursor-pointer relative overflow-hidden"
+      >
         <div class="flex flex-row items-center justify-between pb-2">
           <span class="text-sm font-semibold text-gray-700"
             >Families Affected</span
@@ -150,10 +172,30 @@
             <path d="M16 3.13a4 4 0 010 7.75" />
           </svg>
         </div>
-        <div class="text-2xl font-bold text-gray-900">28,700</div>
+        <div class="text-2xl font-bold text-gray-900 flex items-center gap-2">
+          28,700
+          <span class="animate-pulse text-xs text-blue-500 font-semibold"
+            >▲</span
+          >
+        </div>
         <p class="text-xs text-gray-500">Across 15 municipalities</p>
+        <div class="mt-2 h-2 w-full bg-blue-100 rounded-full">
+          <div
+            class="h-2 bg-[#60a5fa] rounded-full transition-all duration-700"
+            style="width: 65%"
+          ></div>
+        </div>
+        <div
+          class="absolute right-2 top-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        >
+          <span class="bg-[#60a5fa] text-white text-xs px-2 py-1 rounded shadow"
+            >Details</span
+          >
+        </div>
       </div>
-      <div class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb]">
+      <div
+        class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb] group transform transition-transform hover:scale-105 cursor-pointer relative overflow-hidden"
+      >
         <div class="flex flex-row items-center justify-between pb-2">
           <span class="text-sm font-semibold text-gray-700"
             >Relief Goods Distributed</span
@@ -169,10 +211,30 @@
             <path d="M16 3v4M8 3v4M3 10h18" />
           </svg>
         </div>
-        <div class="text-2xl font-bold text-gray-900">₱2.3M</div>
+        <div class="text-2xl font-bold text-gray-900 flex items-center gap-2">
+          ₱2.3M
+          <span class="animate-bounce text-xs text-green-500 font-semibold"
+            >★</span
+          >
+        </div>
         <p class="text-xs text-gray-500">+18% from last week</p>
+        <div class="mt-2 h-2 w-full bg-blue-100 rounded-full">
+          <div
+            class="h-2 bg-[#34d399] rounded-full transition-all duration-700"
+            style="width: 90%"
+          ></div>
+        </div>
+        <div
+          class="absolute right-2 top-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        >
+          <span class="bg-[#34d399] text-white text-xs px-2 py-1 rounded shadow"
+            >Track</span
+          >
+        </div>
       </div>
-      <div class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb]">
+      <div
+        class="bg-white rounded-lg shadow p-6 border border-[#e5e7eb] group transform transition-transform hover:scale-105 cursor-pointer relative overflow-hidden"
+      >
         <div class="flex flex-row items-center justify-between pb-2">
           <span class="text-sm font-semibold text-gray-700">Success Rate</span>
           <svg
@@ -185,8 +247,26 @@
             <polyline points="23 4 11 16 4 9" />
           </svg>
         </div>
-        <div class="text-2xl font-bold text-gray-900">94.2%</div>
+        <div class="text-2xl font-bold text-gray-900 flex items-center gap-2">
+          94.2%
+          <span class="animate-pulse text-xs text-yellow-500 font-semibold"
+            >✔</span
+          >
+        </div>
         <p class="text-xs text-gray-500">+2.1% from last month</p>
+        <div class="mt-2 h-2 w-full bg-blue-100 rounded-full">
+          <div
+            class="h-2 bg-[#fbbf24] rounded-full transition-all duration-700"
+            style="width: 94%"
+          ></div>
+        </div>
+        <div
+          class="absolute right-2 top-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        >
+          <span class="bg-[#fbbf24] text-white text-xs px-2 py-1 rounded shadow"
+            >See More</span
+          >
+        </div>
       </div>
     </div>
 
@@ -210,7 +290,7 @@
           <div class="space-y-4">
             <div
               *ngFor="let request of recentRequests"
-              class="flex items-center justify-between p-4 border rounded-lg"
+              class="flex items-center justify-between p-4 border rounded-lg group hover:shadow-lg transition-all duration-300 cursor-pointer bg-white hover:bg-blue-50"
             >
               <div class="flex-1">
                 <div class="flex items-center gap-2 mb-2">
@@ -248,7 +328,7 @@
               <div class="flex items-center gap-2">
                 <svg
                   *ngIf="request.status === 'urgent'"
-                  class="w-5 h-5 text-red-600"
+                  class="w-5 h-5 text-red-600 animate-pulse"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
@@ -258,7 +338,7 @@
                 </svg>
                 <svg
                   *ngIf="request.status === 'in_progress'"
-                  class="w-5 h-5 text-blue-600"
+                  class="w-5 h-5 text-blue-600 animate-spin-slow"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
@@ -270,7 +350,7 @@
                 </svg>
                 <svg
                   *ngIf="request.status === 'completed'"
-                  class="w-5 h-5 text-green-600"
+                  class="w-5 h-5 text-green-600 animate-bounce"
                   fill="none"
                   stroke="currentColor"
                   stroke-width="2"
@@ -280,7 +360,7 @@
                   <polyline points="12 6 12 12 16 14" />
                 </svg>
                 <button
-                  class="border px-3 py-1 rounded font-medium text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-colors text-xs"
+                  class="border px-3 py-1 rounded font-medium text-muted-foreground hover:bg-[#0973dc] hover:text-white transition-colors text-xs group-hover:scale-105 group-hover:shadow"
                 >
                   View Details
                 </button>
@@ -310,7 +390,7 @@
           <div class="space-y-4">
             <div
               *ngFor="let area of criticalAreas"
-              class="flex items-center justify-between"
+              class="flex items-center justify-between group hover:bg-red-50 transition-colors rounded px-2 py-1 cursor-pointer"
             >
               <div>
                 <p class="font-medium">{{ area.name }}</p>
@@ -318,7 +398,8 @@
               </div>
               <span
                 [ngClass]="{
-                  'bg-red-100 text-red-700': area.alertLevel === 'critical',
+                  'bg-red-100 text-red-700 animate-pulse':
+                    area.alertLevel === 'critical',
                   'bg-blue-100 text-blue-700': area.alertLevel === 'high',
                   'bg-gray-100 text-gray-700': area.alertLevel === 'moderate',
                   'px-2 py-1 rounded text-xs font-semibold': true
@@ -347,7 +428,7 @@
           </div>
           <div class="space-y-3">
             <button
-              class="w-full border px-3 py-2 rounded font-medium flex items-center justify-center gap-2 text-sm"
+              class="w-full border px-3 py-2 rounded font-medium flex items-center justify-center gap-2 text-sm hover:bg-[#0973dc] hover:text-white transition-colors group hover:scale-105"
             >
               <svg
                 class="w-4 h-4"
@@ -362,7 +443,7 @@
               Create Relief Request
             </button>
             <button
-              class="w-full border px-3 py-2 rounded font-medium flex items-center justify-center gap-2 text-sm"
+              class="w-full border px-3 py-2 rounded font-medium flex items-center justify-center gap-2 text-sm hover:bg-[#60a5fa] hover:text-white transition-colors group hover:scale-105"
             >
               <svg
                 class="w-4 h-4"
@@ -378,7 +459,7 @@
               Manage Donations
             </button>
             <button
-              class="w-full border px-3 py-2 rounded font-medium flex items-center justify-center gap-2 text-sm"
+              class="w-full border px-3 py-2 rounded font-medium flex items-center justify-center gap-2 text-sm hover:bg-[#fbbf24] hover:text-white transition-colors group hover:scale-105"
             >
               <svg
                 class="w-4 h-4"
